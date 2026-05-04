@@ -1,0 +1,12 @@
+C:\Users\mrfun\source\repos\c#\TugboatLogistics\LogisticsApp.Shared\bin\Debug\net8.0\LogisticsApp.Shared.deps.json
+C:\Users\mrfun\source\repos\c#\TugboatLogistics\LogisticsApp.Shared\bin\Debug\net8.0\LogisticsApp.Shared.dll
+C:\Users\mrfun\source\repos\c#\TugboatLogistics\LogisticsApp.Shared\bin\Debug\net8.0\LogisticsApp.Shared.pdb
+C:\Users\mrfun\source\repos\c#\TugboatLogistics\LogisticsApp.Shared\obj\Debug\net8.0\LogisticsApp.Shared.csproj.AssemblyReference.cache
+C:\Users\mrfun\source\repos\c#\TugboatLogistics\LogisticsApp.Shared\obj\Debug\net8.0\LogisticsApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mrfun\source\repos\c#\TugboatLogistics\LogisticsApp.Shared\obj\Debug\net8.0\LogisticsApp.Shared.AssemblyInfoInputs.cache
+C:\Users\mrfun\source\repos\c#\TugboatLogistics\LogisticsApp.Shared\obj\Debug\net8.0\LogisticsApp.Shared.AssemblyInfo.cs
+C:\Users\mrfun\source\repos\c#\TugboatLogistics\LogisticsApp.Shared\obj\Debug\net8.0\LogisticsApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\mrfun\source\repos\c#\TugboatLogistics\LogisticsApp.Shared\obj\Debug\net8.0\LogisticsApp.Shared.dll
+C:\Users\mrfun\source\repos\c#\TugboatLogistics\LogisticsApp.Shared\obj\Debug\net8.0\refint\LogisticsApp.Shared.dll
+C:\Users\mrfun\source\repos\c#\TugboatLogistics\LogisticsApp.Shared\obj\Debug\net8.0\LogisticsApp.Shared.pdb
+C:\Users\mrfun\source\repos\c#\TugboatLogistics\LogisticsApp.Shared\obj\Debug\net8.0\ref\LogisticsApp.Shared.dll

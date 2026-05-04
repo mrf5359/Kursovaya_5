@@ -1,0 +1,36 @@
+﻿<Window x:Class="LogisticsApp.Client.FindWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FindWindow" Height="550" Width="350" WindowStartupLocation="CenterScreen" Background="White">
+    <StackPanel Margin="30,20,30,20" VerticalAlignment="Center">
+        <TextBlock Text="Find" FontSize="26" FontWeight="Medium" Margin="0,0,0,25"/>
+
+        <TextBox Name="TxtOrderNumber" Text="Order number" Foreground="White" Background="Gray" BorderThickness="1" BorderBrush="#A0A0A0" GotFocus="RemovePlaceholder" LostFocus="AddPlaceholder" Height="30" Margin="0,0,0,15" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <TextBox Name="TxtWatercraftNumber" Text="Watercraft number" Foreground="White" Background="Gray" BorderThickness="1" BorderBrush="#A0A0A0" GotFocus="RemovePlaceholder" LostFocus="AddPlaceholder" Height="30" Margin="0,0,0,15" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <ComboBox Name="CmbWatercraftModel" Foreground="White" Background="Gray" BorderThickness="1" BorderBrush="#A0A0A0" Height="30" Margin="0,0,0,15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <ComboBoxItem Content="Watercraft Model" IsSelected="True" Visibility="Collapsed"/>
+            <ComboBoxItem Content="Буксир-штовхач" Foreground="Black"/>
+            <ComboBoxItem Content="Баржа" Foreground="Black"/>
+            <ComboBoxItem Content="Катер" Foreground="Black"/>
+        </ComboBox>
+
+        <ComboBox Name="CmbCrewMember" IsEditable="True" Text="Crew member name" Foreground="White" Background="Gray" BorderThickness="1" BorderBrush="#A0A0A0" GotFocus="RemovePlaceholderCmb" LostFocus="AddPlaceholderCmb" Height="30" Margin="0,0,0,15" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <DatePicker Name="DpDateStart" Height="30" Margin="0,0,0,15" Background="Gray" BorderThickness="1" BorderBrush="#A0A0A0" ToolTip="Date start"/>
+        <DatePicker Name="DpDateFinish" Height="30" Margin="0,0,0,15" Background="Gray" BorderThickness="1" BorderBrush="#A0A0A0" ToolTip="Date finish"/>
+
+        <TextBox Name="TxtCustomer" Text="Customer name" Foreground="White" Background="Gray" BorderThickness="1" BorderBrush="#A0A0A0" GotFocus="RemovePlaceholder" LostFocus="AddPlaceholder" Height="30" Margin="0,0,0,15" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <ComboBox Name="CmbCargoType" Foreground="White" Background="Gray" BorderThickness="1" BorderBrush="#A0A0A0" Height="30" Margin="0,0,0,30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <ComboBoxItem Content="Type of cargo" IsSelected="True" Visibility="Collapsed"/>
+            <ComboBoxItem Content="Вугілля" Foreground="Black"/>
+            <ComboBoxItem Content="Контейнери" Foreground="Black"/>
+            <ComboBoxItem Content="Паливо" Foreground="Black"/>
+            <ComboBoxItem Content="Тех. обслуговування" Foreground="Black"/>
+        </ComboBox>
+
+        <Button Content="Find" FontSize="20" Height="45" Background="#E0E0E0" BorderThickness="1" BorderBrush="DarkGray" Click="BtnFind_Click"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Новый профиль",
+    "Projects": [
+      {
+        "Path": "LogisticsApp.Server\\LogisticsApp.Server.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "LogisticsApp.Client\\LogisticsApp.Client.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

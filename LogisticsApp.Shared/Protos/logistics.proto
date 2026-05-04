@@ -1,0 +1,170 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "LogisticsApp.Shared.Protos";
+package logistics;
+
+//Главный сервис
+service LogisticsService {
+  //Получить список заказов
+  rpc GetOrdersList (SearchRequest) returns (OrdersListResponse);
+  //Фильтр
+  rpc GetOrderDetails (OrderIdRequest) returns (OrderDetailsResponse);
+  //Создать\обновить заказ
+  rpc SaveOrder (SaveOrderRequest) returns (SaveOrderResponse);
+  //Список матросиков
+  rpc GetUniqueCrewNames (EmptyRequest) returns (CrewNamesResponse);
+  //Номер заказа
+  rpc GetNextOrderNumber (EmptyRequest) returns (NextOrderNumberResponse);
+  //Логин
+  rpc Login (LoginRequest) returns (LoginResponse);
+  //Удалить заказ
+  rpc DeleteOrder (OrderIdRequest) returns (DeleteOrderResponse);
+  //Отчетики
+  rpc GetReportData (ReportRequest) returns (ReportResponse);
+  //Работаем с доками
+  rpc UploadDocument (UploadRequest) returns (UploadResponse);
+  rpc GetOrderDocuments (OrderIdRequest) returns (DocumentsListResponse);
+  // Удаляем доки(
+  rpc DeleteDocument (DeleteDocumentRequest) returns (DeleteDocumentResponse);
+}
+
+message EmptyRequest {}
+//Краткая инфа
+message OrderPreview {
+  string id = 1;
+  string order_number = 2;
+  string brief_description = 3;
+}
+//Все заказы
+message OrdersListResponse {
+  repeated OrderPreview orders = 1;
+}
+//Передать ID заказа для получения полной информации
+message OrderIdRequest {
+  int32 id = 1;
+}
+//Фул инфа
+message OrderDetailsResponse {
+  int32 id = 1;
+  string order_number = 2;
+  string brief_description = 3;
+  string watercraft_model = 4;
+  string watercraft_number = 5;
+  repeated string crew_members = 6; 
+  string date_start = 7;
+  string date_finish = 8;
+  string destination = 9;
+  string type_of_cargo = 10;
+  double weight_tons = 11;
+  string customer_name = 12;
+  double route_length_km = 13;
+  double fuel_on_start = 14;
+  double fuel_on_finish = 15;
+  double fuel_consumption = 16;
+  int32 number_of_refills = 17;
+  double amount_of_fuel_poured = 18;
+}
+//Обновить заказ
+message SaveOrderRequest {
+  int32 id = 1; // 0 - новое, > 0 - обновить
+  string order_number = 2;
+  string brief_description = 3;
+  string watercraft_model = 4;
+  string watercraft_number = 5;
+  repeated string crew_members = 6;
+  string date_start = 7;
+  string date_finish = 8;
+  string destination = 9;
+  string type_of_cargo = 10;
+  double weight_tons = 11;
+  string customer_name = 12;
+  double route_length_km = 13;
+  double fuel_on_start = 14;
+  double fuel_on_finish = 15;
+  double fuel_consumption = 16;
+  int32 number_of_refills = 17;
+  double amount_of_fuel_poured = 18;
+}
+//Сохранило?
+message SaveOrderResponse {
+  bool success = 1;      //ОК, не ОК
+  string message = 2;    // Текст ошибки
+  int32 new_order_id = 3; // ID
+}
+//Имена матросиков
+message CrewNamesResponse {
+  repeated string names = 1;
+}
+//Новый номер заказа
+message NextOrderNumberResponse {
+  string next_number = 1;
+}
+//Поиск
+message SearchRequest {
+  string order_number = 1;
+  string watercraft_number = 2;
+  string watercraft_model = 3;
+  string crew_member_name = 4;
+  string date_start = 5;
+  string date_finish = 6;
+  string customer_name = 7;
+  string type_of_cargo = 8;
+}
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+message LoginResponse {
+  bool success = 1;
+  string message = 2;
+  string username = 3;
+  string role = 4;
+}
+message DeleteOrderResponse {
+  bool success = 1;
+  string message = 2;
+}
+message ReportRequest {
+  string start_date = 1;
+  string end_date = 2;
+}
+message ReportResponse {
+  repeated WatercraftSummary summaries = 1;
+  repeated BunkeringDetail bunkerings = 2;
+}
+message WatercraftSummary {
+  string watercraft_name = 1;
+  int32 total_trips = 2;
+  double total_fuel_consumed = 3;
+}
+message BunkeringDetail {
+  string order_number = 1;
+  string dates = 2;
+  string watercraft_name = 3;
+  int32 refills = 4;
+  double poured_fuel = 5;
+}
+message UploadRequest {
+  int32 order_id = 1;
+  string file_name = 2;
+  bytes file_data = 3;
+}
+message UploadResponse {
+  bool success = 1;
+  string message = 2;
+}
+message DocumentsListResponse {
+  repeated DocumentInfo documents = 1;
+}
+message DocumentInfo {
+  string file_name = 1;
+  string download_url = 2; //Временная ссылка
+}
+message DeleteDocumentRequest {
+  int32 order_id = 1;
+  string file_name = 2;
+}
+message DeleteDocumentResponse {
+  bool success = 1;
+  string message = 2;
+}

@@ -1,0 +1,147 @@
+﻿<Window x:Class="LogisticsApp.Client.FullInfoOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Order Details" Height="650" Width="850" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Order №:" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Name="TxtOrderNumber" FontSize="20" Width="150" VerticalAlignment="Center" IsReadOnly="True" Background="#EEEEEE"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="0,0,0,15">
+            <TextBlock Text="Brief description:" FontWeight="Bold"/>
+            <TextBox Name="TxtBrief" FontSize="16" Background="#FFFFE0" Padding="5"/>
+        </StackPanel>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Левая часть -->
+            <StackPanel Grid.Column="0" Margin="0,0,15,0">
+                <TextBlock Text="Route &amp; Cargo" FontWeight="Bold" Margin="0,0,0,5"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Destination:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox Name="TxtDestination" Grid.Row="0" Grid.Column="1" Margin="0,2"/>
+
+                    <TextBlock Text="Distance (km):" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox Name="TxtRouteLength" Grid.Row="1" Grid.Column="1" Margin="0,2"/>
+
+                    <TextBlock Text="Cargo Type:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+                    <ComboBox Name="CmbCargoType" Grid.Row="2" Grid.Column="1" Margin="0,2" SelectionChanged="CmbCargoType_SelectionChanged">
+                        <ComboBoxItem Content="Вугілля"/>
+                        <ComboBoxItem Content="Контейнери"/>
+                        <ComboBoxItem Content="Паливо"/>
+                        <ComboBoxItem Content="Тех. обслуговування"/>
+                    </ComboBox>
+
+                    <TextBlock Text="Weight (T):" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox Name="TxtWeight" Grid.Row="3" Grid.Column="1" Margin="0,2"/>
+
+                    <TextBlock Text="Customer:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox Name="TxtCustomer" Grid.Row="4" Grid.Column="1" Margin="0,2"/>
+                </Grid>
+
+                <TextBlock Text="Fuel Details" FontWeight="Bold" Margin="0,15,0,5"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Start (L):" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox Name="TxtFuelStart" Grid.Row="0" Grid.Column="1" Margin="0,2" TextChanged="Fuel_TextChanged"/>
+
+                    <TextBlock Text="Finish (L):" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox Name="TxtFuelFinish" Grid.Row="1" Grid.Column="1" Margin="0,2" TextChanged="Fuel_TextChanged"/>
+
+                    <TextBlock Text="Consumed:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox Name="TxtFuelConsump" Grid.Row="2" Grid.Column="1" Margin="0,2" IsReadOnly="True" Background="#EEEEEE"/>
+
+                    <TextBlock Text="Refills count:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox Name="TxtRefills" Grid.Row="3" Grid.Column="1" Margin="0,2"/>
+
+                    <TextBlock Text="Poured (L):" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox Name="TxtPoured" Grid.Row="4" Grid.Column="1" Margin="0,2" TextChanged="Fuel_TextChanged"/>
+                </Grid>
+            </StackPanel>
+
+            <!-- Правая часть -->
+            <StackPanel Grid.Column="1" Margin="15,0,0,0">
+                <TextBlock Text="Watercraft Info" FontWeight="Bold" Margin="0,0,0,5"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Model:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                    <ComboBox Name="CmbWatercraftModel" Grid.Row="0" Grid.Column="1" Margin="0,2">
+                        <ComboBoxItem Content="Буксир-штовхач"/>
+                        <ComboBoxItem Content="Баржа"/>
+                        <ComboBoxItem Content="Катер"/>
+                    </ComboBox>
+
+                    <TextBlock Text="Number:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox Name="TxtWatercraftNumber" Grid.Row="1" Grid.Column="1" Margin="0,2"/>
+                </Grid>
+
+                <TextBlock Text="Dates" FontWeight="Bold" Margin="0,15,0,5"/>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Start:" VerticalAlignment="Center" Width="40"/>
+                    <!-- Календарики) -->
+                    <DatePicker Name="DpStart" Width="120"/>
+                    <TextBlock Text="Finish:" VerticalAlignment="Center" Width="40" Margin="15,0,0,0"/>
+                    <DatePicker Name="DpFinish" Width="120"/>
+                </StackPanel>
+
+                <TextBlock Text="Crew" FontWeight="Bold" Margin="0,5,0,5"/>
+                <!-- Управление матросами -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                    <ComboBox Name="CmbNewCrew" IsEditable="True" Width="180" Margin="0,0,10,0" ToolTip="Select or type a name"/>
+                    <Button Name="BtnAddCrew" Content="Add" Width="45" Click="BtnAddCrew_Click"/>
+                    <Button Name="BtnDelCrew" Content="Del" Width="45" Margin="5,0,0,0" Click="BtnDelCrew_Click"/>
+                </StackPanel>
+                <ListBox Name="ListCrew" Height="100"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button Name="BtnDocuments" Content="📂 Documents" Width="100" Height="30" Margin="0,0,10,0" Background="#FF9800" Foreground="White" FontWeight="Bold" Click="BtnDocuments_Click"/>
+            <Button Name="BtnSave" Content="Save Order" Width="120" Height="30" Margin="0,0,10,0" Click="BtnSave_Click" Background="#4CAF50" Foreground="White" FontWeight="Bold"/>
+            <Button Content="Cancel" Width="100" Height="30" Click="BtnBack_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

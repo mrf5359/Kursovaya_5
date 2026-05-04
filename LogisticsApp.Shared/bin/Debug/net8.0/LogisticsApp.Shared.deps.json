@@ -1,0 +1,66 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "LogisticsApp.Shared/1.0.0": {
+        "dependencies": {
+          "Google.Protobuf": "3.34.1",
+          "Grpc.Core.Api": "2.80.0",
+          "Grpc.Tools": "2.80.0"
+        },
+        "runtime": {
+          "LogisticsApp.Shared.dll": {}
+        }
+      },
+      "Google.Protobuf/3.34.1": {
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.34.1.0",
+            "fileVersion": "3.34.1.0"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.80.0": {
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.66.0.0"
+          }
+        }
+      },
+      "Grpc.Tools/2.80.0": {}
+    }
+  },
+  "libraries": {
+    "LogisticsApp.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Google.Protobuf/3.34.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-212vdYxRuVopGE5bess6Jg5oXWyizA6hcLPTI7G+qA4PthQEvfeof3njT+7VSY5v/+O0P22xTydiP5fSJJpGEA==",
+      "path": "google.protobuf/3.34.1",
+      "hashPath": "google.protobuf.3.34.1.nupkg.sha512"
+    },
+    "Grpc.Core.Api/2.80.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i/8s+MOrYa6n7BmZ5bilcbHk+EMJDQHm2MKLhwGAT+urQqlZ6cpjvSivYvuULjebuX+UKieLYZbLRCmVQxFRkw==",
+      "path": "grpc.core.api/2.80.0",
+      "hashPath": "grpc.core.api.2.80.0.nupkg.sha512"
+    },
+    "Grpc.Tools/2.80.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NS1AxwVZnrdbBoMf5L5ruGjBjoLBej9avhqxWNsgfu2GU6FhpxEVJOwLJsdljlDCjvquJiAH2zf/WodIWMvf2w==",
+      "path": "grpc.tools/2.80.0",
+      "hashPath": "grpc.tools.2.80.0.nupkg.sha512"
+    }
+  }
+}
