@@ -8,6 +8,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=LogisticsDB;Trusted_Connection=True;"));
 
 var app = builder.Build();
-app.MapGrpcService<LogisticsServiceImpl>();
+app.UseGrpcWeb(new GrpcWebOptions { DefaultEnabled = true });
+app.MapGrpcService<LogisticsServiceImpl>().EnableGrpcWeb();
 app.MapGet("/", () => "gRPC Server is running.");
 app.Run();

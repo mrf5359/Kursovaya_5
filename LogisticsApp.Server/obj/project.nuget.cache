@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DRKEdJCjBmg=",
+  "dgSpecHash": "eByKDs+xYII=",
   "success": true,
   "projectFilePath": "C:\\Users\\mrfun\\source\\repos\\c#\\TugboatLogistics\\LogisticsApp.Server\\LogisticsApp.Server.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\mrfun\\.nuget\\packages\\grpc.aspnetcore\\2.80.0\\grpc.aspnetcore.2.80.0.nupkg.sha512",
     "C:\\Users\\mrfun\\.nuget\\packages\\grpc.aspnetcore.server\\2.80.0\\grpc.aspnetcore.server.2.80.0.nupkg.sha512",
     "C:\\Users\\mrfun\\.nuget\\packages\\grpc.aspnetcore.server.clientfactory\\2.80.0\\grpc.aspnetcore.server.clientfactory.2.80.0.nupkg.sha512",
+    "C:\\Users\\mrfun\\.nuget\\packages\\grpc.aspnetcore.web\\2.80.0\\grpc.aspnetcore.web.2.80.0.nupkg.sha512",
     "C:\\Users\\mrfun\\.nuget\\packages\\grpc.core.api\\2.80.0\\grpc.core.api.2.80.0.nupkg.sha512",
     "C:\\Users\\mrfun\\.nuget\\packages\\grpc.net.client\\2.80.0\\grpc.net.client.2.80.0.nupkg.sha512",
     "C:\\Users\\mrfun\\.nuget\\packages\\grpc.net.clientfactory\\2.80.0\\grpc.net.clientfactory.2.80.0.nupkg.sha512",
